@@ -1,16 +1,14 @@
 // src/components/CategorySection.js
 import React from 'react';
+import VideoCard from './VideoCard';
 
-const CategorySection = ({ title, videos }) => {
+const CategorySection = ({ title, videos, onEdit, onDelete }) => {
   return (
     <section style={sectionStyle}>
       <h2>{title}</h2>
       <div style={videosContainerStyle}>
         {videos.map((video, index) => (
-          <div key={index} style={videoStyle}>
-            <img src={video.image} alt={video.title} style={videoImageStyle} />
-            <p>{video.title}</p>
-          </div>
+          <VideoCard key={index} video={video} onEdit={onEdit} onDelete={onDelete} />
         ))}
       </div>
     </section>
@@ -23,18 +21,8 @@ const sectionStyle = {
 
 const videosContainerStyle = {
   display: 'flex',
+  flexWrap: 'wrap',
   gap: '10px',
-  overflowX: 'scroll',
-};
-
-const videoStyle = {
-  flex: '0 0 auto',
-  width: '200px',
-};
-
-const videoImageStyle = {
-  width: '100%',
-  height: 'auto',
 };
 
 export default CategorySection;
