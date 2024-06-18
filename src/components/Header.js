@@ -1,6 +1,6 @@
 // src/components/Header.js
 import React from 'react';
-import logo from '../assets/logo.png'; // Asegúrate de tener una imagen de logo en esta ruta
+import logo from '../assets/logo.png'; 
 
 
 const Header = () => {

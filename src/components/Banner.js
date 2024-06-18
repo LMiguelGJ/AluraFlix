@@ -17,7 +17,7 @@ const bannerStyle = {
 };
 
 const imageStyle = {
-  width: '100%',
+  width: '20%',
   height: 'auto',
 };
 
