@@ -1,46 +1,22 @@
 // src/components/Header.js
 import React from 'react';
 import logo from '../assets/logo.png'; 
+import styles from '../styles/Header.module.css';
 
 
 const Header = () => {
   return (
-    <header style={headerStyle}>
-      <img src={logo} alt="Logo" style={logoStyle} />
+    <header className={styles.headerStyle}>
+      <img src={logo} alt="Logo" className={styles.logoStyle} />
       <nav>
-        <ul style={navListStyle}>
-          <li style={navItemStyle}>Home</li>
-          <li style={navItemStyle}>Nuevo Video</li>
+        <ul className={styles.navListStyle}>
+          <li className={styles.btHome}>Home</li>
+          <li className={styles.btNewvideo}>Nuevo Video</li>
         </ul>
       </nav>
     </header>
   );
 };
-
-const headerStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px 20px',
-    backgroundColor: '#282c34',
-    color: 'white',
-  };
-  
-  const logoStyle = {
-    height: '40px',
-  };
-  
-  const navListStyle = {
-    listStyle: 'none',
-    display: 'flex',
-    gap: '20px',
-  };
-  
-  const navItemStyle = {
-    textDecoration: 'none',
-    color: 'white',
-  };
-
 
 export default Header;
 

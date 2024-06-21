@@ -7,6 +7,11 @@ import CategorySection from '../components/CategorySection';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  const parrafo = `Es un mecanismo donde podrás comprometerte en la resolución de 
+                   un problema para poder aplicar todos los 
+                  conocimientos adquiridos en la formación React.`
+
+
   const frontendVideos = [
     { image: 'url/to/frontend1.jpg', title: 'Frontend Video 1' },
     { image: 'url/to/frontend2.jpg', title: 'Frontend Video 2' },
@@ -33,7 +38,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Banner image={banner_img} title="Featured Video" />
+      <Banner image={banner_img} title="Challenge React" parrafo={parrafo}/>
       <main>
         <CategorySection title="Frontend" videos={frontendVideos} />
         <CategorySection title="Backend" videos={backendVideos} />
