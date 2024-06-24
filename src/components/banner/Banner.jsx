@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from "./Banner.module.css";
-import categoryData from "../../data/CategoryData"; 
+import categoryData from "../../data/CategoryData";
+import banner from "../../assets/banner1.png";
 
 const categoryLookup = categoryData.reduce((acc, category) => {
     acc[category.name] = category;
@@ -16,14 +17,18 @@ function Banner({ card }) {
     };
 
     return (
-        <main id="banner" className={styles.layer} style={{ backgroundImage: `url(${card.photo})` }}>
+        <main id="banner" className={styles.layer} style={{ backgroundImage: `url(${banner})` }}>
             <div className={styles.gradient}></div>
             <section className={styles.content}>
                 <h1 className={styles.name} style={titleStyle}>{name}</h1>
                 <h2 className={styles.title}>{card.title}</h2>
                 <p className={styles.subtitle}>{card.description}</p>
             </section>
-            <section className={styles.container} style={{ borderColor: primaryColor, borderStyle: 'solid', borderWidth: '2px' }}>
+            <section className={styles.container} style={{ 
+                borderColor: primaryColor, 
+                borderStyle: 'solid', 
+                borderWidth: '4px' 
+                }}>
                 <iframe
                     src={card.link}
                     title={card.title}
