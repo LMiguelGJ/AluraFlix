@@ -1,6 +1,5 @@
 import { styled } from 'styled-components';
-import { BsInstagram, BsTwitterX, BsLinkedin } from "react-icons/bs";
-import { FaSquareFacebook } from "react-icons/fa6";
+import { BsLinkedin } from "react-icons/bs";
 
 import './Footer.css';
 import logo from '../../assets/logo.png';
@@ -53,22 +52,7 @@ function Footer() {
         <StyledFooter className='container'>
             <IconContainer>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100084487023873">
-                    <FaSquareFacebook className='icons'/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/Flor_Maria_LP">
-                    <BsTwitterX className='icons'/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/flormarialabandapuchaicela">
-                    <BsInstagram className='icons' />
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/flor-mar%C3%ADa-labanda-puchaicela-ing-ti//">
+                    <a href="https://do.linkedin.com/in/luis-miguel-gonz%C3%A1lez-jim%C3%A9nez-742826252/">
                     <BsLinkedin className='icons' />
                     </a>
                 </li>
@@ -77,9 +61,10 @@ function Footer() {
                 <img src={logo} alt="Logo" />
             </LogoContainer>
             <FooterText className='text'>
-                Diseñado por Alura.<br />
-                Desarrollado por Flor María Labanda P.<br />
-                18 de Junio de 20024
+                Diseñado: Alura.<br />
+                Desarrollado:<br />
+                Luis Miguel
+                2024
             </FooterText>
         </StyledFooter>
     );
