@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/Mariq12/challenge-aluraflix/assets/101030215/5c142c8f-588f-460f-94e8-d3c20b975917" alt="LogoMain"/>
-</p>
-
 # Challenge AluraFlix
 <p align="right">
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
@@ -124,7 +120,3 @@ Ver la demo en [Vercel]()
 
 ## Personas colaboradoras
 **Alura Latam** organizó el Challenge AluraFlix y proporcionó las herramientas de gestión y diseño.
-
-
-## Autora
-[<img src="https://avatars.githubusercontent.com/u/101030215?v=4" width=155><br><sub>Flor María Labanda Puchaicela</sub>](https://github.com/Mariq12)
