@@ -6,6 +6,7 @@
     background-color: var(--color-black);
     border-bottom: 3px solid var(--color-blue);
 }
+
 a{ text-decoration: none;}
 
 .logoContainer{
@@ -37,6 +38,12 @@ a{ text-decoration: none;}
 }
 
 @media (max-width: 600px) {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .navLinks {
         display: none;
         flex-direction: column;
