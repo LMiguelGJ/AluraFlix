@@ -30,7 +30,7 @@ Ejecutar el comando:
 
 Nombre: 
     
-    challenge-aluraflix
+    Aluraflix
 
 Seleccionar:
 
