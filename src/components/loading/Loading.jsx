@@ -5,7 +5,10 @@ const getCssVariable = (variable) => {
     return getComputedStyle(document.documentElement).getPropertyValue(variable);
 };
 
+
+
 const Loading = () => {
+
     const headerBgColor = getCssVariable("--color-frontend");
     const stSecondaryColor = getCssVariable("--color-inov-gestao");
     const ndSecondaryColor = getCssVariable("--color-backend");
@@ -19,7 +22,7 @@ const Loading = () => {
 
     return (
         <div className="loading-container">
-            <GooeyCircleLoader {...loaderProps} />
+            <GooeyCircleLoader {...loaderProps}/>
             <h2>Cargando...</h2>
         </div>
     );
