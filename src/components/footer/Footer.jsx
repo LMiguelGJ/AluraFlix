@@ -65,9 +65,8 @@ function Footer() {
                 <img src={logo} alt="Logo" />
             </LogoContainer>
             <FooterText className='text'>
-                Diseñado: Alura.<br />
                 Desarrollado:<br />
-                Luis Miguel
+                Luis Miguel G<br />
                 2024
             </FooterText>
         </StyledFooter>
