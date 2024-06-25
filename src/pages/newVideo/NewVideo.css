@@ -12,6 +12,11 @@
     background-color: var(--color-bg);
 }
 
+.content {
+    background-color: var(--color-bg);
+
+}
+
 .new-video__header {
     text-align: center;
 }

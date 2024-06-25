@@ -31,22 +31,16 @@ function Banner({ card, categoryLookup }) {
                 <p className={styles.subtitle}>
                     Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.
                 </p>
-                <button onClick={toggleDescription} className={styles.toggleButton}>
-                    {showDescription ? 'Ocultar descripción' : 'Ver descripción...'}
-                </button>
-                {showDescription && (
-                    <div className={styles.description}>
-                        <h2 className={styles.title2}>{title}</h2>
-                        <p className={styles.subtitle2}>{description}</p>
-                    </div>
-                )}
+                <div className={styles.description}>
+                    <h2 className={styles.title2}>{title}</h2>
+                    <p className={styles.subtitle2}>{description}</p>
+                </div>
             </section>
             <section className={styles.containerBanner}>
                 <iframe
                     src={link}
                     title={title}
                     className={styles.video}
-                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                 ></iframe>
