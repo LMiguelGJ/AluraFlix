@@ -30,7 +30,7 @@ Ejecutar el comando:
 
 Nombre: 
     
-    Aluraflix
+    aluraflix
 
 Seleccionar:
 
@@ -38,7 +38,7 @@ Seleccionar:
     JavaScript
 Ejecutar:
 
-    cd challenge-aluraflix
+    cd aluraflix
     npm install
     npm rin dev
 
