@@ -1,7 +1,6 @@
 * {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: var(--color-bg);
   overflow-x: hidden;
   box-sizing: border-box;
 }
@@ -13,7 +12,6 @@
   --color-frontend: #6BD1FF;
   --color-inov-gestao: #FFBA05;
   --color-error: #FF0000;
-  --color-text-red: #E53935;
   --color-light-gray: #A5A5A5;
   --color-white: #FFFFFF;
   --color-white-smoke: #F5F5F5;
@@ -23,4 +21,5 @@
   --color-black: #000000;
   --color-brillo: #FFD700;
   --color-button-shadow: #0b223f;
+  --color-banner: #001233;
 }
