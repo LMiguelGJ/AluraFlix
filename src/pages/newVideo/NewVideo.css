@@ -9,6 +9,7 @@
     padding: 2rem;
     margin: 0 auto;
     gap: 2rem;
+    background-color: var(--color-bg);
 }
 
 .new-video__header {

@@ -1,6 +1,6 @@
 .icons {
     color: var(--color-white);
-    font-size: 20px;
+    font-size: 40px;
     transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
     transition: all 0.2s ease;
 }
@@ -21,7 +21,7 @@
         gap: 10px;
     }
     .icons {
-        font-size: 18px;
+        font-size: 30px;
         
     }
     .logo {
