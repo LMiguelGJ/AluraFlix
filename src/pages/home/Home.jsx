@@ -1,16 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Banner from "../../components/banner/Banner";
 import Category from "../../components/category/Category";
-import cardsData from "../../data/CardsData";
-import categoryData from "../../data/CategoryData";
 import Modal from "../../components/modal/Modal";
+import categoryData from "../../data/CategoryData";
+import { useVideoContext } from "../../contexts/VideoContext";
+import Loading from "../../components/loading/Loading"; 
 
 function Home() {
-    const [cards, setCards] = useState(cardsData);
-    const [categories] = useState(categoryData);
-    const [bannerCard, setBannerCard] = useState(cards[0]);
+    const { videos, deleteVideo, updateVideo } = useVideoContext();
+    const [categories, setCategories] = useState([]);
+    const [bannerCard, setBannerCard] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
     const [currentCard, setCurrentCard] = useState(null);
+    const [categoryLookup, setCategoryLookup] = useState({});
+    const [isLoading, setIsLoading] = useState(true); 
+
+    useEffect(() => {
+        setCategories(categoryData);
+    }, []);
+
+    useEffect(() => {
+        if (videos.length > 0) {
+            setBannerCard(videos[0]);
+            setIsLoading(false);
+        } else {
+            setIsLoading(true);
+        }
+    }, [videos]);
+
+    useEffect(() => {
+        const lookup = {};
+        categories.forEach(category => {
+            lookup[category.name] = category;
+        });
+        setCategoryLookup(lookup);
+    }, [categories]);
 
     const handleCardClick = (card) => {
         setBannerCard(card);
@@ -21,11 +45,10 @@ function Home() {
     };
 
     const handleCardDelete = (cardId) => {
-        const updatedCards = cards.filter(card => card.id !== cardId);
-        setCards(updatedCards);
-        if (bannerCard.id === cardId && updatedCards.length > 0) {
-            setBannerCard(updatedCards[0]);
-        } else if (updatedCards.length === 0) {
+        deleteVideo(cardId);
+        if (bannerCard && bannerCard.id === cardId && videos.length > 0) {
+            setBannerCard(videos[0]);
+        } else if (videos.length === 0) {
             setBannerCard(null);
         }
     };
@@ -40,35 +63,33 @@ function Home() {
     };
 
     const handleModalSave = (updatedCard) => {
-        const updatedCards = cards.map(card => card.id === updatedCard.id ? updatedCard : card);
-        setCards(updatedCards);
+        updateVideo(updatedCard);
         setModalOpen(false);
     };
 
     return (
-        <>
-            {bannerCard && <Banner id="banner" card={bannerCard} />}
-            {categories.map((category) => (
-                <Category
-                    datos={category}
-                    key={category.id}
-                    cards={cards.filter(card => card.team === category.name)}
-                    onCardClick={handleCardClick}
-                    onCardDelete={handleCardDelete}
-                    onCardEdit={handleCardEdit}
+        isLoading ?
+            <Loading /> :
+            <div className="home-container">
+                {bannerCard && <Banner card={bannerCard} categoryLookup={categoryLookup} />}
+                {categories.map(category => (
+                    <Category
+                        key={category.id}
+                        datos={category}
+                        cards={videos.filter(card => card.category === category.name)}
+                        onCardClick={handleCardClick}
+                        onCardDelete={handleCardDelete}
+                        onCardEdit={handleCardEdit}
+                    />
+                ))}
+                <Modal
+                    card={currentCard}
+                    isOpen={modalOpen}
+                    onClose={handleModalClose}
+                    onSave={handleModalSave}
                 />
-            ))}
-            <Modal
-                card={currentCard}
-                isOpen={modalOpen}
-                onClose={handleModalClose}
-                onSave={handleModalSave}
-            />
-        </>
+            </div>
     );
 }
 
 export default Home;
-
-
-

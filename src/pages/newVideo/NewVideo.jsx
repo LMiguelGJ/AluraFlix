@@ -4,11 +4,13 @@ import './NewVideo.css';
 import categoryData from '../../data/CategoryData';
 import { validateForm } from '../../utils/ValidateForm';
 import OptionList from '../../components/optionList/OptionList';
+import { useVideoContext } from '../../contexts/VideoContext';
 
 function NewVideo() {
+    const { addVideo } = useVideoContext();
     const initialFormData = {
         title: '',
-        team: '',
+        category: '',
         photo: '',
         link: '',
         description: '',
@@ -18,7 +20,7 @@ function NewVideo() {
     const [errors, setErrors] = useState({});
     const [touchedFields, setTouchedFields] = useState({
         title: false,
-        team: false,
+        category: false,
         photo: false,
         link: false,
         description: false,
@@ -40,7 +42,7 @@ function NewVideo() {
     const isFormFilled = (formData) => {
         return (
             formData.title.trim() !== '' &&
-            formData.team.trim() !== '' &&
+            formData.category.trim() !== '' &&
             formData.photo.trim() !== '' &&
             formData.link.trim() !== '' &&
             formData.description.trim() !== ''
@@ -61,7 +63,8 @@ function NewVideo() {
         await validateFormAndSetErrors();
         if (isFormFilled(formData) && Object.keys(errors).length === 0) {
             console.log('Formulario válido. Guardando...', formData);
-            navigateTo('/'); // Redirigir a la página principal después de guardar
+            addVideo(formData);
+            navigateTo('/');
         }
     };
 
@@ -70,7 +73,7 @@ function NewVideo() {
         setErrors({});
         setTouchedFields({
             title: false,
-            team: false,
+            category: false,
             photo: false,
             link: false,
             description: false,
@@ -112,16 +115,16 @@ function NewVideo() {
                         </div>
                         <div className="form-section__right">
                             <OptionList
-                                clase={`new-video__form-input new-video__form-option ${errors.team && touchedFields.team ? 'error-label' : ''}`}
+                                clase={`new-video__form-input new-video__form-option ${errors.category && touchedFields.category ? 'error-label' : ''}`}
                                 clase2='new-video__dropdown-option'
-                                value={formData.team}
+                                value={formData.category}
                                 onChange={(e) => {
-                                    handleChange({ target: { name: 'team', value: e.target.value } });
-                                    handleFieldBlur('team');
+                                    handleChange({ target: { name: 'category', value: e.target.value } });
+                                    handleFieldBlur('category');
                                 }}
                                 options={categoryData}
                             />
-                            {errors.team && touchedFields.team && <span className="error-message">{errors.team}</span>}
+                            {errors.category && touchedFields.category && <span className="error-message">{errors.category}</span>}
                         </div>
                     </div>
                     <div className="form-section">
