@@ -29,6 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: auto;
     padding: 1rem;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
