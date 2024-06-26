@@ -177,7 +177,7 @@ Inicia el proyecto en [http://localhost:5173/](http://localhost:5173/)
 
 ### Demo
 
-Ver demo en [Vercel](https://aluraflix-tan-two.vercel.app/)
+Ver demo en [Vercel](https://aluraflix-v1.vercel.app/)
 
 ## ✔️ Tecnologías
 * [React + Vite](https://vitejs.dev/guide/)
