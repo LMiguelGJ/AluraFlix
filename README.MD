@@ -190,8 +190,6 @@ Ver demo en [Vercel](https://aluraflix-tan-two.vercel.app/)
 * Git
 * GitHub
 
-Ver la demo en [Vercel]()
-
 ## 🛠️ Herramientas
 ### Gestión
 * **Trello:** Se encuentran las tareas para realizar el proyecto.
