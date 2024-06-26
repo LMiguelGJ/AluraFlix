@@ -175,6 +175,10 @@ Inicia el proyecto en [http://localhost:5173/](http://localhost:5173/)
 
 3. Subir la carpeta `dist` a GitHub.*
 
+### Demo
+
+Ver demo en [Vercel](https://aluraflix-tan-two.vercel.app/)
+
 ## ✔️ Tecnologías
 * [React + Vite](https://vitejs.dev/guide/)
 * JavaScript
