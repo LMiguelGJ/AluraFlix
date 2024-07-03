@@ -18,7 +18,7 @@ function AppRoutes() {
                         <Routes>
                             <Route index element={<Home />}></Route>
                             <Route path="newVideo" element={<NewVideo />}></Route>
-                            <Route path="*" element={<NotFoundPage />}></Route>
+                            <Route path='*' exact={true} element={<NotFoundPage />}></Route>
                         </Routes>
                     </div>
                     <FooterBar />
