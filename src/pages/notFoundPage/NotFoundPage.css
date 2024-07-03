@@ -57,7 +57,8 @@
 
 .permission_denied h3 span {
   position: relative;
-  width: 65px;
+  margin: 0rem 0.5rem;
+  width: 100px;
   display: inline-block;
 }
 

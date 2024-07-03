@@ -41,6 +41,8 @@ const NotFoundPage = () => {
     };
   }, []);
 
+  const path = window.location.pathname.replace('/', '')
+
   return (
     <>
 
@@ -50,12 +52,11 @@ const NotFoundPage = () => {
       <div className="denied__wrapper">
         <h1>404</h1>
         <h3>
-          LOST IN <span>SPACE</span> App-Name? Hmm, looks like that page doesn't
-          exist.
+          LOST IN <span>{path}</span>AluraFix? Hmm, parece que esa página no existe.
         </h3>
         <img id="astronaut" src={astronaut} alt="Astronaut" /> 
         <img id="planet" src={planet} alt="Planet" />
-        <a href="#"><button className="denied__link">Go Home</button></a>
+        <a href="/"><button className="denied__link">Go Home</button></a>
       </div>
     </div>
     </div>

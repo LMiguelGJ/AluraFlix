@@ -18,7 +18,7 @@ function AppRoutes() {
                         <Routes>
                             <Route index element={<Home />}></Route>
                             <Route path="newVideo" element={<NewVideo />}></Route>
-                            <Route path="404" element={<NotFoundPage />}></Route>
+                            <Route path="*" element={<NotFoundPage />}></Route>
                         </Routes>
                     </div>
                     <FooterBar />
