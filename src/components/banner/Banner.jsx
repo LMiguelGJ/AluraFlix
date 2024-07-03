@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Banner.module.css';
-import banner from '../../assets/banner1.png'; 
+import banner from '../../assets/banner.png'; 
 
 function Banner({ card, categoryLookup }) {
     const [showDescription, setShowDescription] = useState(false);
